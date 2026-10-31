@@ -1,0 +1,6 @@
+Options -Indexes
+Header set X-Robots-Tag "noindex, nofollow"
+<FilesMatch "\.(htaccess|git.*)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git
