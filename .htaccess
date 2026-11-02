@@ -1,5 +1,6 @@
 Options -Indexes
 Header set X-Robots-Tag "noindex, nofollow"
+Header set Access-Control-Allow-Origin "https://typefully.com"
 <FilesMatch "\.(htaccess|git.*)$">
   Require all denied
 </FilesMatch>
