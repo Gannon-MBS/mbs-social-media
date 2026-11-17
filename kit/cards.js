@@ -1,0 +1,25 @@
+/* MBS card templates (1080x1080). Shared by the MBS Marketing Dashboard and the render kit.
+   cardHTML(post) returns markup; add class "anim" to the .card to play the entrance animation. */
+const LOGO_W='assets/logo_white.png', LOGO_N='assets/logo_navy_crop.png';
+const BOOK='https://outlook.office.com/bookwithme/user/6110e5c81d14487dbcfebfcef17fec6e%40mbsks.com?anonymous&ismsaljsauthenabled';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function hl(h,a,cls){h=esc(h);a=esc(a||'');if(a&&h.includes(a))return h.replace(a,`<span class="${cls||'acc'}">${a}</span>`);return h}
+const D=s=>` style="--d:${s}s"`;
+const CIRC=`<svg class="circ" width="320" height="400" viewBox="0 0 560 700" fill="none" stroke="rgba(93,196,195,.22)" stroke-width="3"><path d="M560 60 H380 L320 120 V300"/><circle cx="320" cy="312" r="11"/><path d="M560 140 H450 L400 190 V420 L360 460"/><circle cx="352" cy="468" r="11"/><path d="M560 230 H500 V560"/><circle cx="500" cy="572" r="11"/></svg>`;
+function cardHTML(p){
+  const pts=(p.points||[]).slice(0,5);
+  switch(p.layout){
+  case 'email':return `<div class="card t-email"><img class="logo a" src="${LOGO_N}"${D(.1)}><div class="pillx a"${D(.3)}>${esc(p.eyebrow||'Scam alert')}</div><div class="H a"${D(.5)}>${hl(p.headline,p.accent,'acc2')}</div>
+   <div class="mail a"${D(1.1)}><div class="r a"${D(1.4)}><span class="k">From</span><span class="v">${esc(p.email?.from)}</span><span class="fl pop"${D(2.5)}>${esc(p.email?.flags?.[0])}</span></div><div class="r a"${D(1.7)}><span class="k">Subject</span><span class="v">${esc(p.email?.subject)}</span><span class="fl pop"${D(2.8)}>${esc(p.email?.flags?.[1])}</span></div><div class="r a"${D(2.0)}><span class="k">Body</span><span class="v" style="font-weight:500;color:#33555f">${esc(p.email?.body)}</span><span class="fl pop"${D(3.1)}>${esc(p.email?.flags?.[2])}</span></div></div>
+   <div class="steps">${pts.slice(0,3).map((t,i)=>`<div class="a"${D(3.6+i*.3)}><b>${i+1}</b>${esc(t.title)}</div>`).join('')}</div>
+   <div class="foot a"${D(4.6)}>${esc(p.cta||'Questions? Ask before you pay.')}<small>mbsks.com · (316) 516-8826 · Wichita, KS</small></div></div>`;
+  case 'question':return `<div class="card t-question"><div class="bar grow"${D(.1)}></div><div class="H a"${D(.3)}>${hl(p.headline,p.accent)}</div><div class="ans a"${D(1.9)}>${esc(p.sub)}</div><div class="foot a"${D(2.6)}><div>mbsks.com/request-consultation<br>(316) 516-8826 · Wichita, KS</div><img src="${LOGO_N}"></div></div>`;
+  case 'quote':return `<div class="card t-quote"><div class="mark faint"${D(.1)}>“</div><div class="stars a"${D(.4)}>★★★★★</div><div class="H a"${D(.8)}>${esc(p.quote||p.headline)}</div><div class="by a"${D(1.7)}>${esc(p.quote_by||'')}<small>${esc(p.quote_source||'Google review')}</small></div><div class="band a"${D(2.3)}><img src="${LOGO_W}"><div>Local help desk. <span class="acc">Never outsourced.</span><small>Quote in 2 minutes · mbsks.com/request-consultation</small></div></div></div>`;
+  case 'stat':return `<div class="card t-stat"><div class="eb a"${D(.2)}>${esc(p.eyebrow)}</div><div class="big pop"${D(.5)}>${esc(p.stat_number)}</div><div class="lab a"${D(1.2)}>${esc(p.stat_label)}</div><div class="H a"${D(1.6)}>${esc(p.headline)}</div><div class="src a"${D(2.1)}>${esc(p.stat_source?('Source: '+p.stat_source):'')}</div><div class="panel2 a"${D(2.4)}><p>${esc(p.cta||"I'm always happy to help.")}<small>mbsks.com/request-consultation · (316) 516-8826</small></p><img src="${LOGO_W}"></div></div>`;
+  case 'text':return `<div class="card t-text"><div class="k a"${D(.2)}>${esc(p.eyebrow||'Quick tip')}</div><div class="flow"><div class="H a"${D(.5)}>${hl(p.headline,p.accent)}</div><div class="rule grow-x"${D(1.3)}></div><div class="b a"${D(1.7)}>${esc(p.sub)}</div></div><div class="sig a"${D(2.5)}><img src="${LOGO_N}"><div>Gannon Marcotte<small>Modern Business Solutions · (316) 516-8826</small></div></div></div>`;
+  default:return `<div class="card t-dark">${CIRC}<img class="logo a" src="${LOGO_W}"${D(.1)}><div class="eb a"${D(.35)}>${esc(p.eyebrow)}</div><div class="H a"${D(.6)}>${hl(p.headline,p.accent)}</div>
+   <ol>${pts.map((t,i)=>`<li class="a"${D(1.3+i*.35)}><i>${i+1}</i><div>${esc(t.title)}${t.sub?`<small>${esc(t.sub)}</small>`:''}</div></li>`).join('')}</ol>
+   <div class="foot a"${D(1.6+pts.length*.35)}><div>${esc(p.cta||'Questions? Just let me know!')}<small>mbsks.com/request-consultation</small></div><div style="text-align:right;font-size:24px">(316) 516-8826<small>Wichita, KS</small></div></div></div>`;
+  }
+}
+const ANIM_SECONDS=7.5;
