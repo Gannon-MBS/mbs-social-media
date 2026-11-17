@@ -17,6 +17,7 @@ function mockHTML(m){const k=m.kind;
  if(k==='checklist')return `<div class="wt">${esc(m.title||'Checklist')}</div>${(m.rows||[]).map((r,i)=>`<div class="vr a"${D(1.3+i*.3)}><div class="ic">${esc(r[2]||'✓')}</div><div>${esc(r[0])}</div><span class="own pop"${D(2.6+i*.25)}>${esc(r[1])} ✓</span></div>`).join('')}`;
  return ''}
 function cardHTML(p){
+  if(String(p.layout||'').startsWith('s-'))return storyHTML(p);
   const pts=(p.points||[]).slice(0,5);
   switch(p.layout){
   case 'email':return `<div class="card t-email"><img class="logo a" src="${LOGO_N}"${D(.1)}><div class="pillx a"${D(.3)}>${esc(p.eyebrow||'Scam alert')}</div><div class="H a"${D(.5)}>${hl(p.headline,p.accent,'acc2')}</div>

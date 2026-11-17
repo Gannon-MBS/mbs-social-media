@@ -291,7 +291,7 @@ html,body{margin:0;width:1080px;height:1080px;overflow:hidden;background:#002B38
 .card.anim.bi .v-doors.t-mono .bi-tag{color:#111}.card.anim.bi .v-doors.t-mono .bi-bar{background:#111}
 .card.anim.bi .bi-out.t-mono .o1 span{color:#fff;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:10px}
 .card.anim.bi .bi-out.t-mono .o2{color:#9a9a9a}
-</style></head><body><div id="root"></div>
-<script src="cards.js"></script><script src="intros.js"></script>
+</style><link rel="stylesheet" href="stories.css"></head><body><div id="root"></div>
+<script src="cards.js"></script><script src="stories.js"></script><script src="intros.js"></script>
 <script>window.renderCard=(p,anim)=>{const r=document.getElementById('root');r.innerHTML=anim?((window.INTRO&&window.INTRO!=='classic')?videoHTMLv(p,window.INTRO,window.THEME||'white'):videoHTML(p)):cardHTML(p);if(anim)r.firstElementChild.classList.add('anim','bi');return document.fonts.ready.then(()=>true)}</script>
 </body></html>
