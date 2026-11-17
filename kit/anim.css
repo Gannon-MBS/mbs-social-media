@@ -6,9 +6,9 @@
 .card.anim .circ path{stroke-dasharray:900;stroke-dashoffset:900;animation:mbsDraw 2.4s ease-out calc(.4s + var(--off,0s)) forwards}
 .card.anim .circ circle{opacity:0;animation:mbsFade .4s calc(2.2s + var(--off,0s)) forwards}
 .card.anim.t-question .H .acc{background-repeat:no-repeat;background-size:0% 100%;animation:mbsHl .8s ease-out calc(1.3s + var(--off,0s)) forwards}
-.card.anim.t-phone .H .acc,.card.anim.t-dark .H .acc,.card.anim.t-text .H .acc{display:inline-block;animation:mbsGlow 1.2s ease-in-out calc(1.2s + var(--off,0s)) 2 alternate}
+.card.anim.t-mock .H .acc,.card.anim.t-phone .H .acc,.card.anim.t-dark .H .acc,.card.anim.t-text .H .acc{display:inline-block;animation:mbsGlow 1.2s ease-in-out calc(1.2s + var(--off,0s)) 2 alternate}
 .card.anim .fl{box-shadow:0 0 0 0 rgba(240,163,58,.7)}
-.card.anim.t-phone .fl.pop,.card.anim.t-email .fl.pop{animation:mbsPop .55s cubic-bezier(.3,1.6,.5,1) calc(var(--d,0s) + var(--off,0s)) forwards,mbsRing 1.1s ease-out calc(var(--d,0s) + var(--off,0s) + .5s) 2}
+.card.anim.t-mock .fl.pop,.card.anim.t-phone .fl.pop,.card.anim.t-email .fl.pop{animation:mbsPop .55s cubic-bezier(.3,1.6,.5,1) calc(var(--d,0s) + var(--off,0s)) forwards,mbsRing 1.1s ease-out calc(var(--d,0s) + var(--off,0s) + .5s) 2}
 @keyframes mbsUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
 @keyframes mbsPop{to{opacity:1;transform:scale(1)}}
 @keyframes mbsGrowY{to{transform:scaleY(1)}}

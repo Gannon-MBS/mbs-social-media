@@ -4,7 +4,7 @@ const HL=n=>`<div class="hl"><img class="hl-mark" src="assets/${n}_mark.png"><im
 const CL=n=>`<img class="cl-mark" src="assets/${n}_mark.png"><div class="cl-w w1"><img src="assets/${n}_w1.png"></div><div class="cl-w w2"><img src="assets/${n}_w2.png"></div>`;
 const LOGOS={color:{c:'c_white_teal',h:'h_white_teal',doors:'c_navy_teal'},white:{c:'c_white',h:'h_white',doors:'c_white'},mono:{c:'c_white',h:'h_white',doors:'c_black'}};
 function biHTML(v,theme){
-  theme=LOGOS[theme]?theme:'color';const L=LOGOS[theme],T=' t-'+theme;
+  theme=(LOGOS[theme]&&theme!=='color')?theme:'white';const L=LOGOS[theme],T=' t-'+theme;
   const tag=t=>`<div class="bi-bar"></div><div class="bi-tag">${t}</div>`;
   const center=v==='signal'||v==='doors';
   const out=`<div class="bi-out${T}"><img class="${center?'oc':'oh'}" src="assets/${center?L.c:L.h}.png"><div class="o1">Call or text <span>(316) 516-8826</span></div><div class="o2">MBSKS.COM · WICHITA, KS</div></div>`;
