@@ -14,6 +14,7 @@ function mockHTML(m){const k=m.kind;
  if(k==='share')return `<div class="wt">Share “${esc(m.file)}”</div><div class="fld a"${D(1.3)}><span>General access</span><b class="bad">🌐 Anyone with the link</b></div><div class="fld a"${D(1.6)}><span>People with access</span><b>Everyone in the company</b></div><div class="ai a"${D(2.1)}><div class="bot">AI</div><div>“Summarize <b>${esc(m.file)}</b>”<small>An AI tool can read whatever your people can open.</small></div></div>`;
  if(k==='form')return `<div class="wt">Cyber insurance application</div>${(m.rows||[]).map((r,i)=>`<div class="fr a"${D(1.3+i*.3)}><div>${esc(r[0])}</div><div class="yn"><span class="${r[1]==='yes'?'on':''}">Yes</span><span class="${r[1]==='sort'?'sort':''}">${r[1]==='sort'?'Sort of?':'No'}</span></div></div>`).join('')}`;
  if(k==='mfa')return `<div class="mfa"><div class="lk a"${D(1.2)}>🔒</div><div class="t a"${D(1.4)}>Approve sign-in?</div><div class="s a"${D(1.6)}>Someone is signing in to <b>you@yourbusiness.com</b> from a new device.</div><div class="num pop"${D(2.0)}>47</div><div class="s a"${D(2.2)}>Enter the number shown on screen</div><div class="btns a"${D(2.5)}><span>Deny</span><span class="ap">Approve</span></div></div>`;
+ if(k==='checklist')return `<div class="wt">${esc(m.title||'Checklist')}</div>${(m.rows||[]).map((r,i)=>`<div class="vr a"${D(1.3+i*.3)}><div class="ic">${esc(r[2]||'✓')}</div><div>${esc(r[0])}</div><span class="own pop"${D(2.6+i*.25)}>${esc(r[1])} ✓</span></div>`).join('')}`;
  return ''}
 function cardHTML(p){
   const pts=(p.points||[]).slice(0,5);
