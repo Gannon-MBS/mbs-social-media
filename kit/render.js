@@ -10,6 +10,8 @@ const fs = require('fs'), path = require('path'), os = require('os');
   const b = await chromium.launch();
   const pg = await b.newPage({ viewport: { width: 1080, height: 1080 } });
   await pg.goto('file://' + path.join(__dirname, 'card.html'));
+  const intro = (process.argv.find(x => x.startsWith('--intro=')) || '').slice(8);
+  if (intro) await pg.evaluate(v => { window.INTRO = v; }, intro);
   await pg.evaluate(([p, a]) => window.renderCard(p, a), [post, video]);
   await pg.waitForTimeout(300);
   if (!video) { await pg.screenshot({ path: outBase + '.png' }); await b.close(); return; }
