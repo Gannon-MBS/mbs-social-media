@@ -1,5 +1,5 @@
 /* ===== signature intros (.card.anim.bi .bi-in.v-*) ===== */
-.card.anim.bi .bi-in[class*="v-"]{background:radial-gradient(circle at 50% 42%,#0d5568 0,#002B38 50%,#00121a 100%)}
+.card.anim.bi .bi-in[class*="v-"]{background:radial-gradient(circle at 50% 42%,#0d5568 0,#002A3A 50%,#00121a 100%)}
 .card.anim.bi .bi-in .bi-bar{top:592px}.card.anim.bi .bi-in .bi-tag{top:622px}
 /* horizontal logo block */
 .card.anim.bi .bi-in .hl{position:absolute;left:130px;top:382px;width:820px;height:176px}
@@ -27,17 +27,17 @@
 .card.anim.bi .v-circuit path{fill:none;stroke:#5DC4C3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:900}
 .card.anim.bi .v-circuit .th{stroke-width:5;animation:mbsDraw .6s cubic-bezier(.5,0,.2,1) .1s forwards}
 .card.anim.bi .v-circuit .tl{stroke-width:2.5;opacity:.45;animation:mbsDraw 1.1s cubic-bezier(.5,0,.2,1) .5s forwards}
-.card.anim.bi .v-circuit circle{fill:#F0A33A;opacity:0;transform-box:fill-box;transform-origin:center;animation:biDot .4s ease-out .65s forwards}
+.card.anim.bi .v-circuit circle{fill:#5DC4C3;opacity:0;transform-box:fill-box;transform-origin:center;animation:biDot .4s ease-out .65s forwards}
 .card.anim.bi .v-circuit .hl-mark{opacity:0;transform:translateX(273px) scale(.5);animation:hlPop .45s cubic-bezier(.3,1.5,.5,1) .15s forwards,hlSlide .55s cubic-bezier(.6,0,.2,1) .7s forwards}
 .card.anim.bi .v-circuit .hl-word{clip-path:inset(0 100% 0 0);animation:hlReveal .6s cubic-bezier(.3,0,.2,1) .85s forwards}
 /* DOORS: navy doors split on a glowing seam to reveal the light logo */
 .card.anim.bi .bi-in.v-doors{background:#F4F7F8}
-.card.anim.bi .v-doors .door{position:absolute;top:0;bottom:0;width:50%;background:radial-gradient(circle at 100% 45%,#0d5568 0,#002B38 60%,#00121a 100%);z-index:2}
+.card.anim.bi .v-doors .door{position:absolute;top:0;bottom:0;width:50%;background:radial-gradient(circle at 100% 45%,#0d5568 0,#002A3A 60%,#00121a 100%);z-index:2}
 .card.anim.bi .v-doors .door.l{left:0;animation:doorL .7s cubic-bezier(.75,0,.2,1) .5s forwards}
 .card.anim.bi .v-doors .door.r{right:0;transform:scaleX(-1);animation:doorR .7s cubic-bezier(.75,0,.2,1) .5s forwards}
 .card.anim.bi .v-doors .seam{position:absolute;left:538px;width:4px;top:0;bottom:0;background:#5DC4C3;box-shadow:0 0 24px 6px rgba(93,196,195,.7);z-index:3;transform:scaleY(0);animation:seam .9s ease-out forwards}
 .card.anim.bi .v-doors .cl-mark,.card.anim.bi .v-doors .cl-w{opacity:0;transform:scale(1.12);animation:settle .9s cubic-bezier(.2,.8,.2,1) .55s forwards}
-.card.anim.bi .v-doors .bi-tag{color:#002B38;animation-delay:1.3s}.card.anim.bi .v-doors .bi-bar{animation-delay:1.2s}
+.card.anim.bi .v-doors .bi-tag{color:#002A3A;animation-delay:1.3s}.card.anim.bi .v-doors .bi-bar{animation-delay:1.2s}
 /* STREAM: data streaks fall, logo resolves from blur, light sweep, slide-off exit */
 .card.anim.bi .bi-in.v-stream{background:radial-gradient(circle at 50% 46%,#073847 0,#00141b 62%);clip-path:none;animation:biSlide .55s cubic-bezier(.7,0,.25,1) 1.95s forwards}
 .card.anim.bi .v-stream .st{position:absolute;top:0;width:3px;height:var(--h);background:linear-gradient(transparent,#5DC4C3);border-radius:2px;opacity:.8;transform:translateY(-300px);animation:fall .8s cubic-bezier(.5,0,.8,.6) var(--s) forwards}
@@ -63,7 +63,7 @@
 @keyframes biSlide{to{transform:translateX(-100%)}}
 
 /* ----- white-cloud theme ----- */
-.card.anim.bi .v-doors.t-white{background:radial-gradient(circle at 50% 42%,#0d5568 0,#002B38 50%,#00121a 100%)}
+.card.anim.bi .v-doors.t-white{background:radial-gradient(circle at 50% 42%,#0d5568 0,#002A3A 50%,#00121a 100%)}
 .card.anim.bi .v-doors.t-white .door{background:radial-gradient(circle at 100% 45%,#ffffff 0,#E9F0F2 70%)}
 .card.anim.bi .v-doors.t-white .bi-tag{color:#cfe9ea}
 /* ----- black & white theme ----- */

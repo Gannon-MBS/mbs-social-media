@@ -1,6 +1,6 @@
 /* Story layouts: each post gets its own composition + motion. Used when p.layout starts with "s-".
    Final state is the default (stills render correctly); motion only plays under .card.anim. */
-const CUR = `<svg class="cur" viewBox="0 0 40 40"><path d="M6 3 L6 33 L14 25 L20 38 L25 36 L19 23 L30 23 Z" fill="#fff" stroke="#002B38" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
+const CUR = `<svg class="cur" viewBox="0 0 40 40"><path d="M6 3 L6 33 L14 25 L20 38 L25 36 L19 23 L30 23 Z" fill="#fff" stroke="#002A3A" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
 function sFoot(dark, d){return `<div class="sfoot ${dark?'dk':''} a"${D(d||4.6)}><img src="${dark?LOGO_W:LOGO_N}"><span>(316) 516-8826 · mbsks.com</span></div>`}
 function storyHTML(p){
   const m=p.s||{};
