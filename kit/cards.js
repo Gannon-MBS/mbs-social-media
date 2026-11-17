@@ -22,4 +22,7 @@ function cardHTML(p){
    <div class="foot a"${D(1.6+pts.length*.35)}><div>${esc(p.cta||'Questions? Just let me know!')}<small>mbsks.com/request-consultation</small></div><div style="text-align:right;font-size:24px">(316) 516-8826<small>Wichita, KS</small></div></div></div>`;
   }
 }
-const ANIM_SECONDS=7.5;
+const BI=`<div class="bi-in"><svg viewBox="0 0 1080 1080"><path d="M0 250 H250 L320 320 V380"/><path d="M1080 210 H830 L760 280 V360"/><path d="M0 930 H200 L260 870 V830"/><path d="M1080 950 H880 L820 890 V850"/><circle cx="320" cy="392" r="12"/><circle cx="760" cy="372" r="12"/><circle cx="260" cy="818" r="12"/><circle cx="820" cy="838" r="12"/></svg><img class="bi-logo" src="${LOGO_W}"><div class="bi-sweep"></div><div class="bi-bar"></div><div class="bi-tag">Managed IT &amp; Cybersecurity</div></div><div class="bi-out"><img src="${LOGO_W}"><div class="o1">Call or text <span>(316) 516-8826</span></div><div class="o2">MBSKS.COM · WICHITA, KS</div></div>`;
+/* video card = card markup + signature intro/outro; add classes "anim bi" to play */
+function videoHTML(p){return cardHTML(p).replace(/<\/div>\s*$/,BI+'</div>')}
+const ANIM_SECONDS=7.5, VIDEO_SECONDS=10.6;

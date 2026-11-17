@@ -1,14 +1,14 @@
 /* ===== animation (only when .card has class "anim") ===== */
-.card.anim .a{opacity:0;animation:mbsUp .75s cubic-bezier(.2,.8,.2,1) var(--d,0s) forwards}
-.card.anim .pop{opacity:0;transform:scale(.6);animation:mbsPop .55s cubic-bezier(.3,1.6,.5,1) var(--d,0s) forwards}
-.card.anim .grow{transform:scaleY(0);transform-origin:top;animation:mbsGrowY .8s cubic-bezier(.2,.8,.2,1) var(--d,0s) forwards}
-.card.anim .grow-x{transform:scaleX(0);transform-origin:left;animation:mbsGrowX .7s cubic-bezier(.2,.8,.2,1) var(--d,0s) forwards}
-.card.anim .circ path{stroke-dasharray:900;stroke-dashoffset:900;animation:mbsDraw 2.4s ease-out .4s forwards}
-.card.anim .circ circle{opacity:0;animation:mbsFade .4s 2.2s forwards}
-.card.anim.t-question .H .acc{background-repeat:no-repeat;background-size:0% 100%;animation:mbsHl .8s ease-out 1.3s forwards}
-.card.anim.t-dark .H .acc,.card.anim.t-text .H .acc{display:inline-block;animation:mbsGlow 1.2s ease-in-out 1.2s 2 alternate}
+.card.anim .a{opacity:0;animation:mbsUp .75s cubic-bezier(.2,.8,.2,1) calc(var(--d,0s) + var(--off,0s)) forwards}
+.card.anim .pop{opacity:0;transform:scale(.6);animation:mbsPop .55s cubic-bezier(.3,1.6,.5,1) calc(var(--d,0s) + var(--off,0s)) forwards}
+.card.anim .grow{transform:scaleY(0);transform-origin:top;animation:mbsGrowY .8s cubic-bezier(.2,.8,.2,1) calc(var(--d,0s) + var(--off,0s)) forwards}
+.card.anim .grow-x{transform:scaleX(0);transform-origin:left;animation:mbsGrowX .7s cubic-bezier(.2,.8,.2,1) calc(var(--d,0s) + var(--off,0s)) forwards}
+.card.anim .circ path{stroke-dasharray:900;stroke-dashoffset:900;animation:mbsDraw 2.4s ease-out calc(.4s + var(--off,0s)) forwards}
+.card.anim .circ circle{opacity:0;animation:mbsFade .4s calc(2.2s + var(--off,0s)) forwards}
+.card.anim.t-question .H .acc{background-repeat:no-repeat;background-size:0% 100%;animation:mbsHl .8s ease-out calc(1.3s + var(--off,0s)) forwards}
+.card.anim.t-dark .H .acc,.card.anim.t-text .H .acc{display:inline-block;animation:mbsGlow 1.2s ease-in-out calc(1.2s + var(--off,0s)) 2 alternate}
 .card.anim .fl{box-shadow:0 0 0 0 rgba(240,163,58,.7)}
-.card.anim.t-email .fl.pop{animation:mbsPop .55s cubic-bezier(.3,1.6,.5,1) var(--d,0s) forwards,mbsRing 1.1s ease-out calc(var(--d,0s) + .5s) 2}
+.card.anim.t-email .fl.pop{animation:mbsPop .55s cubic-bezier(.3,1.6,.5,1) calc(var(--d,0s) + var(--off,0s)) forwards,mbsRing 1.1s ease-out calc(var(--d,0s) + var(--off,0s) + .5s) 2}
 @keyframes mbsUp{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
 @keyframes mbsPop{to{opacity:1;transform:scale(1)}}
 @keyframes mbsGrowY{to{transform:scaleY(1)}}
@@ -18,5 +18,29 @@
 @keyframes mbsHl{to{background-size:100% 100%}}
 @keyframes mbsGlow{from{text-shadow:0 0 0 rgba(240,163,58,0)}to{text-shadow:0 0 28px rgba(240,163,58,.55)}}
 @keyframes mbsRing{from{box-shadow:0 0 0 0 rgba(240,163,58,.75)}to{box-shadow:0 0 0 22px rgba(240,163,58,0)}}
-.card.anim .faint{opacity:0;animation:mbsFaint 1s ease-out var(--d,0s) forwards}
+.card.anim .faint{opacity:0;animation:mbsFaint 1s ease-out calc(var(--d,0s) + var(--off,0s)) forwards}
 @keyframes mbsFaint{to{opacity:.12}}
+
+/* ===== signature intro + outro (video only: .card.anim.bi) ===== */
+.bi-in,.bi-out{display:none}
+.card.bi{--off:2.3s}
+.card.anim.bi .bi-in{display:block;position:absolute;inset:0;z-index:20;background:radial-gradient(circle at 50% 44%,#0d5568 0,#002B38 52%,#00141b 100%);clip-path:inset(0 0 0 0);animation:biWipe .6s cubic-bezier(.7,0,.25,1) 1.95s forwards}
+.card.anim.bi .bi-in svg{position:absolute;inset:0}
+.card.anim.bi .bi-in path{fill:none;stroke:#5DC4C3;stroke-width:5;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;animation:mbsDraw .9s cubic-bezier(.5,0,.2,1) forwards}
+.card.anim.bi .bi-in path:nth-of-type(2){animation-delay:.08s}.card.anim.bi .bi-in path:nth-of-type(3){animation-delay:.16s}.card.anim.bi .bi-in path:nth-of-type(4){animation-delay:.24s}
+.card.anim.bi .bi-in circle{fill:#F0A33A;opacity:0;transform-box:fill-box;transform-origin:center;animation:biDot .5s ease-out .8s forwards}
+.card.anim.bi .bi-in .bi-logo{position:absolute;left:50%;top:44%;width:560px;transform:translate(-50%,-50%) scale(.82);opacity:0;animation:biLogo .8s cubic-bezier(.2,.9,.25,1) .55s forwards,biGlow 1s ease-in-out 1.1s 1 alternate}
+.card.anim.bi .bi-in .bi-bar{position:absolute;left:50%;top:calc(44% + 205px);width:180px;height:6px;margin-left:-90px;background:#F0A33A;border-radius:3px;transform:scaleX(0);animation:mbsGrowX .5s cubic-bezier(.2,.8,.2,1) 1.15s forwards}
+.card.anim.bi .bi-in .bi-tag{position:absolute;left:0;right:0;top:calc(44% + 235px);text-align:center;color:#cfe9ea;font-family:Inter,sans-serif;font-weight:700;font-size:26px;letter-spacing:7px;text-transform:uppercase;opacity:0;animation:mbsUp .6s cubic-bezier(.2,.8,.2,1) 1.25s forwards}
+.card.anim.bi .bi-in .bi-sweep{position:absolute;top:0;bottom:0;left:-30%;width:30%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-18deg);animation:biSweep .7s ease-in-out 1.15s forwards}
+.card.anim.bi .bi-out{display:flex;position:absolute;inset:0;z-index:20;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(circle at 50% 40%,#0d5568 0,#002B38 55%,#00141b 100%);color:#fff;font-family:Inter,sans-serif;clip-path:inset(100% 0 0 0);animation:biUp .6s cubic-bezier(.7,0,.25,1) calc(var(--off) + 6.7s) forwards}
+.card.anim.bi .bi-out img{width:420px;margin-bottom:10px}
+.card.anim.bi .bi-out .o1{font-family:'Maven Pro',Inter,sans-serif;font-weight:800;font-size:54px}
+.card.anim.bi .bi-out .o1 span{color:#F0A33A}
+.card.anim.bi .bi-out .o2{font-size:28px;font-weight:600;color:#9fc9cc;letter-spacing:2px}
+@keyframes biWipe{to{clip-path:inset(0 0 100% 0)}}
+@keyframes biUp{to{clip-path:inset(0 0 0 0)}}
+@keyframes biDot{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+@keyframes biLogo{to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes biGlow{to{filter:drop-shadow(0 0 26px rgba(93,196,195,.65))}}
+@keyframes biSweep{to{left:120%}}
