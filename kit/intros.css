@@ -61,3 +61,23 @@
 @keyframes hlSlide{from{opacity:1;transform:translateX(273px) scale(1)}to{opacity:1;transform:translateX(0) scale(1)}}
 @keyframes hlReveal{to{clip-path:inset(0 0 0 0)}}
 @keyframes biSlide{to{transform:translateX(-100%)}}
+
+/* ----- white-cloud theme ----- */
+.card.anim.bi .v-doors.t-white{background:radial-gradient(circle at 50% 42%,#0d5568 0,#002B38 50%,#00121a 100%)}
+.card.anim.bi .v-doors.t-white .door{background:radial-gradient(circle at 100% 45%,#ffffff 0,#E9F0F2 70%)}
+.card.anim.bi .v-doors.t-white .bi-tag{color:#cfe9ea}
+/* ----- black & white theme ----- */
+.card.anim.bi .bi-in.t-mono,.card.anim.bi .bi-out.t-mono{background:radial-gradient(circle at 50% 42%,#2a2a2a 0,#0c0c0c 52%,#000 100%)}
+.card.anim.bi .t-mono .ring{border-color:#fff}
+.card.anim.bi .t-mono .grid{background-image:radial-gradient(rgba(255,255,255,.2) 1.6px,transparent 1.7px)}
+.card.anim.bi .t-mono path{stroke:#fff}
+.card.anim.bi .t-mono circle{fill:#fff}
+.card.anim.bi .t-mono .bi-bar{background:#fff}
+.card.anim.bi .t-mono .bi-tag{color:#bdbdbd}
+.card.anim.bi .t-mono .st{background:linear-gradient(transparent,#fff)}
+.card.anim.bi .t-mono .seam{background:#fff;box-shadow:0 0 24px 6px rgba(255,255,255,.6)}
+.card.anim.bi .bi-in.v-doors.t-mono{background:#fff}
+.card.anim.bi .v-doors.t-mono .door{background:radial-gradient(circle at 100% 45%,#2a2a2a 0,#0c0c0c 60%,#000 100%)}
+.card.anim.bi .v-doors.t-mono .bi-tag{color:#111}.card.anim.bi .v-doors.t-mono .bi-bar{background:#111}
+.card.anim.bi .bi-out.t-mono .o1 span{color:#fff;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:10px}
+.card.anim.bi .bi-out.t-mono .o2{color:#9a9a9a}
